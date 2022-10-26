@@ -18,6 +18,11 @@ public class GreatingController {
     @Autowired
     private IllnessRepository illnessRepository;
 
+    @GetMapping("/")
+    public String greeting(Map<String, Object> model) {
+        return "hello";
+    }
+
     @GetMapping("/hello")
     public String greeting(
             @RequestParam(name="name", required=false, defaultValue="World") String name,

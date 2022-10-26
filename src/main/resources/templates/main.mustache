@@ -2,15 +2,25 @@
 
 <body>
      <div>
+
+         <div>
+             <form action="/logout" method="post">
+                 <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                 <input type="submit" value="Sign Out"/>
+             </form>
+         </div>
+
             <form method="post" action="add">
                 <input type="text" name="text" placeholder="Put massage" />
                 <input type="text" name="tag" placeholder="Tag">
+                <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
                 <button type="submit">Add</button>
             </form>
         </div>
         <div>MessageList</div>
         <form method="post" action="filter">
             <input type="text" name="filter">
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
             <button type="submit">Search</button>
         </form>
         {{#illnesses}}
