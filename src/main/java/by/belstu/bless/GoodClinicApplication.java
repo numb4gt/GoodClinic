@@ -14,9 +14,4 @@ public class GoodClinicApplication {
 		SpringApplication.run(GoodClinicApplication.class, args);
 	}
 
-	@Bean
-	public RestTemplate RestTemplate(){
-		return new RestTemplateBuilder().build();
-	}
-
 }
