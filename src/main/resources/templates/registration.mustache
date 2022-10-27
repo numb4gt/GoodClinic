@@ -1,21 +1,64 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Spring Security Example </title>
+    <title>Registration</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-Registration page
 
-{{#message}}
-    {{message}}
-{{/message}}
+<header class="header">
+    <div class="container">
+        <div class="header_inner">
 
-<form action="/registration" method="post">
-    <div><label> User Name : <input type="text" name="username"/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
-    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
-    <div><input type="submit" value="Sign In"/></div>
-</form>
+            <div class="header_logo">
+                <img class="beb" src="images/clinic-removebg-preview.png">
+            </div>
+
+            <nav>
+                <a class="nav-link active" href="http://minzdrav.gov.by/ru/">
+                    <img class="beb" src="images/free-icon-medicine-387604.png">
+                </a>
+            </nav>
+
+
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="circle"></div>
+
+    <form class="register-form-container" action="/registration" method="post">
+
+        <h1 class="form-title">Registration page</h1>
+
+        {{#message}}
+            <h5>{{message}}</h5>
+        {{/message}}
+
+        <div class="form-fields">
+            <div class="form-field">
+                <input type="text" name="username" placeholder="Login"/>
+            </div>
+            <div  class="form-field">
+                <input type="password" name="password" placeholder="Password"/>
+            </div>
+        </div>
+
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+
+        <div>
+            <button class="button" type="submit" value="Sign In"> Login</button>
+            <a href="/login" class="button button-google">Back</a>
+        </div>
+
+    </form>
+
+
+
+</main>
 </body>
 </html>
