@@ -20,7 +20,10 @@ public class GreatingController {
 
     @GetMapping("/")
     public String greeting(Map<String, Object> model) {
-        return "hello";
+        Iterable<Illness> illnesses= illnessRepository.findAll();
+
+        model.put("illnesses", illnesses);
+        return "main";
     }
 
     @GetMapping("/hello")
