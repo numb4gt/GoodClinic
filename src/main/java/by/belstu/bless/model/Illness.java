@@ -1,9 +1,6 @@
 package by.belstu.bless.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Illness {
@@ -15,12 +12,29 @@ public class Illness {
     private String text;
     private String tag;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    public User user;
+
+    public String GetUserName(){
+        return user != null ? user.getUsername() : "<none>";
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User author) {
+        this.user = author;
+    }
+
     public Illness() {
     }
 
-    public Illness(String text, String tag) {
+    public Illness(String text, String tag, User user) {
         this.text = text;
         this.tag = tag;
+        this.user = user;
     }
 
     public void setText(String text) {

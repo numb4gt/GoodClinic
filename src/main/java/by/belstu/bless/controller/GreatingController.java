@@ -1,8 +1,10 @@
 package by.belstu.bless.controller;
 
 import by.belstu.bless.model.Illness;
+import by.belstu.bless.model.User;
 import by.belstu.bless.repository.IllnessRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -44,8 +46,8 @@ public class GreatingController {
     }
 
     @PostMapping("add")
-    public String add(@RequestParam String text, @RequestParam String tag, Map<String, Object> model) {
-        Illness message = new Illness(text, tag);
+    public String add(@AuthenticationPrincipal User user, @RequestParam String text, @RequestParam String tag, Map<String, Object> model) {
+        Illness message = new Illness(text, tag, user);
 
         illnessRepository.save(message);
 
