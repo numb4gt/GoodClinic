@@ -35,9 +35,7 @@
 
         <h1 class="form-title">Registration page</h1>
 
-        {{#message}}
-            <h5>{{message}}</h5>
-        {{/message}}
+
 
         <div class="form-fields">
             <div class="form-field">
@@ -53,6 +51,9 @@
         <div>
             <button class="button" type="submit" value="Sign In"> Login</button>
             <a href="/login" class="button button-google">Back</a>
+            {{#message}}
+                <h5>{{message}}</h5>
+            {{/message}}
         </div>
 
     </form>

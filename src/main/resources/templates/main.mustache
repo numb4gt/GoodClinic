@@ -1,39 +1,70 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>User</title>
+    <link rel="stylesheet" href="styles/style2.css">
+
 </head>
 
 <body>
-     <div>
 
-         <div>
-             <form action="/logout" method="post">
-                 <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
-                 <input type="submit" value="Sign Out"/>
-             </form>
-         </div>
+<header class="header">
+    <div class="container">
+        <div class="header_inner">
 
-            <form method="post" action="add">
-                <input type="text" name="text" placeholder="Put massage" />
-                <input type="text" name="tag" placeholder="Tag">
-                <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
-                <button type="submit">Add</button>
-            </form>
+            <div class="header_logo">
+                <img class="beb" src="images/clinic-removebg-preview.png">
+            </div>
+
+            <nav>
+                <div>
+                    <form action="/logout" method="post">
+                        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                        <input class="button-logout" type="submit" value="Sign Out"/>
+                    </form>
+                </div>
+
+            </nav>
+
+
+
         </div>
+    </div>
+</header>
+
+
+<main>
+
+    <div class="register-form-container">
+
+        <form method="post" action="add">
+            <input type="text" name="text" placeholder="Put massage" />
+            <input type="text" name="tag" placeholder="Tag">
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+            <button type="submit">Add</button>
+        </form>
+
         <div>MessageList</div>
         <form method="post" action="filter">
             <input type="text" name="filter">
             <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
             <button type="submit">Search</button>
         </form>
-        {{#illnesses}}
-        <div>
-            <b>{{id}}</b>
-            <span>{{text}}</span>
-            <i>{{tag}}</i>
-            <strong>{{GetUserName}}</strong>
+
+            {{#illnesses}}
+                <div class="user_nav">
+                    <b class="num">{{id}}</b>
+                    <span class="message">{{text}}</span>
+                    <i>{{tag}}</i>
+                    <strong>{{GetUserName}}</strong>
+                </div>
+            {{/illnesses}}
+
         </div>
-        {{/illnesses}}
+
+
+
+    <main>
+
 </body>
 </html>
