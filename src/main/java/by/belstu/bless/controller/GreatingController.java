@@ -33,7 +33,10 @@ public class GreatingController {
             @RequestParam(name="name", required=false, defaultValue="World") String name,
             Map<String, Object> model
     ) {
-        model.put("name", name);
+
+        Iterable<Illness> illnesses= illnessRepository.findAll();
+        model.put("illnesses", illnesses);
+
         return "hello";
     }
 

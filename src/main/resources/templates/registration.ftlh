@@ -46,14 +46,12 @@
             </div>
         </div>
 
-        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <input type="hidden" name="_csrf" value="${_csrf.token}" />
 
         <div>
             <button class="button" type="submit" value="Sign In"> Login</button>
             <a href="/login" class="button button-google">Back</a>
-            {{#message}}
-                <h5>{{message}}</h5>
-            {{/message}}
+                <h5>${message!""}</h5>
         </div>
 
     </form>

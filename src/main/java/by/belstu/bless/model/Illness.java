@@ -16,8 +16,8 @@ public class Illness {
     @JoinColumn(name = "user_id")
     public User user;
 
-    public String GetUserName(){
-        return user != null ? user.getUsername() : "<none>";
+    public String getUserName(){
+        return user != null ? user.getUsername() : "none";
     }
 
     public User getUser() {

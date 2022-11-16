@@ -44,7 +44,7 @@
             </div>
         </div>
 
-        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <input type="hidden" name="_csrf" value="${_csrf.token}" />
 
         <div>
             <button class="button" type="submit" value="Sign In"> Login</button>
