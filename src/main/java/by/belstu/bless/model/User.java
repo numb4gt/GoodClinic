@@ -16,6 +16,17 @@ public class User implements UserDetails {
     private Long Id;
     private String username;
     private String password;
+
+    private String secondname;
+
+    public String getSecondname() {
+        return secondname;
+    }
+
+    public void setSecondname(String secondname) {
+        this.secondname = secondname;
+    }
+
     private boolean active;
 
     public Long getId() {

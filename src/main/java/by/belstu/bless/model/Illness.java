@@ -16,6 +16,19 @@ public class Illness {
     @JoinColumn(name = "user_id")
     public User user;
 
+
+    @ManyToOne
+    @JoinColumn(name = "userfor_id")
+    public User userfor;
+
+    public User getUserfor() {
+        return userfor;
+    }
+
+    public void setUserfor(User userfor) {
+        this.userfor = userfor;
+    }
+
     public String getUserName(){
         return user != null ? user.getUsername() : "none";
     }
@@ -31,10 +44,11 @@ public class Illness {
     public Illness() {
     }
 
-    public Illness(String text, String tag, User user) {
+    public Illness(String text, String tag, User user, User userfor) {
         this.text = text;
         this.tag = tag;
         this.user = user;
+        this.userfor = userfor;
     }
 
     public void setText(String text) {

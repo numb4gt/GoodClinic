@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.Map;
 
 @Controller
-public class RegistrtionControler {
+public class RegistrtionController {
     @Autowired
     private UserRepositiry userRepositiry;
 

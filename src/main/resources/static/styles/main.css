@@ -169,7 +169,7 @@ input:focus {
 
 }
 
-.button {
+.button-fff {
     font-weight: bold;
     font-size: 14px;
     display: block;
@@ -184,14 +184,71 @@ input:focus {
     cursor: pointer;
 }
 
-.button:hover {
+.button-fff:hover {
     background-color: #0d6cf2;
 }
 
-.user_nav{
-    border: 3px black solid;
+.
+
+.user_nav {
+    margin: 10px 0 0 0;
+    border: 3px #858585 solid;
     display: flex;
     flex-direction: column;
+    border-radius: 25px;
+}
+
+.form-search {
+    box-sizing: border-box;
+    position: relative;
+    margin: 1em;
+}
+
+.search {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 3em;
+    line-height: 3em;
+    border-radius: 1.5em;
+    border: 1px solid;
+    padding: 0 1.5em;
+}
+
+.search-btn {
+    box-sizing: border-box;
+    position: absolute;
+    top: .4em;
+    right: .4em;
+    height: 2.2em;
+    border-radius: 1.1em;
+    border: 1px solid;
+    text-transform: uppercase;
+    background: #247fff;
+    border-radius: 25px;
+    color: #fff;
+    text-align: center;
+    width: 70px;
+}
+
+.search-btn {
+    box-sizing: border-box;
+    position: absolute;
+    top: .4em;
+    right: .4em;
+    height: 2.2em;
+    border-radius: 1.1em;
+    border: 1px solid;
+    text-transform: uppercase;
+    background: #247fff;
+    border-radius: 25px;
+    color: #fff;
+    text-align: center;
+    width: 70px;
+}
+
+.search-btn:hover {
+    background-color: #0d6cf2;
 }
 
 

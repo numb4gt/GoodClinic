@@ -1,6 +1,5 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #247fff;
 
 }
 
@@ -250,14 +249,33 @@ a.button {
     color: #fff;
 }
 
+.button-work {
+    margin-bottom: 20px;
+    color: #2a76e5;
+    background: #f2f6ff;
+}
+
+.button-work:hover {
+    background: #a8c0fc;
+    color: #fff;
+}
+
 .divider {
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
     color: #405d87;
     text-align: center;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
+
+.log {
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 40px;
+}
+
 
 

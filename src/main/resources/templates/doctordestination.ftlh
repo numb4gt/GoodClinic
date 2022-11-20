@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>User</title>
-    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/style2.css">
+
 </head>
 
 <body>
@@ -12,7 +13,7 @@
         <div class="header_inner">
 
             <div class="header_logo">
-                <img class="beb" src="images/clinic-removebg-preview.png">
+                <img class="beb" src="../images/clinic-removebg-preview.png">
             </div>
 
             <nav>
@@ -36,11 +37,11 @@
 
     <div class="register-form-container">
 
-        <div>Search:</div>
-        <form class="form-search" method="post" action="filter">
-            <input class="search" placeholder="Enter the illness, you are looking for" type="text" name="filter">
+        <div>MessageList</div>
+        <form method="post" action="filter">
+            <input type="text" name="filter">
             <input type="hidden" name="_csrf" value="${_csrf.token}" />
-            <button class="search-btn" type="submit">Search</button>
+            <button type="submit">Search</button>
         </form>
 
         <#list illnesses as ill>
@@ -52,12 +53,12 @@
                 <strong>${ill.userName!"none"}</strong>
             </div>
 
-            <#else>
+        <#else>
             No illneses.
 
         </#list>
 
-        </div>
+    </div>
 
 
 
