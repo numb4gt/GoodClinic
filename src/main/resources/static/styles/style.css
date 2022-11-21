@@ -27,6 +27,28 @@ h5 {
     margin-left: 20px;
 }
 
+.button-logout {
+
+    transform: translate(-50px, 0);
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+    height: 45px;
+    width: 120px;
+    background: #19b3c7;
+    border-radius: 5px;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 45px;
+    cursor: pointer;
+
+}
+
+.button-logout:hover {
+    background-color: #a1d9de;
+    color: darkgrey;
+}
 
 
 .beb{
@@ -208,7 +230,8 @@ h5 {
     font-weight: 500;
     font-size: 20px;
     line-height: 23px;
-    margin-bottom: 38px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .form-field {
@@ -229,6 +252,7 @@ h5 {
     text-align: center;
     line-height: 45px;
     cursor: pointer;
+    margin-bottom: 8px;
 }
 
 .button:hover {
@@ -242,6 +266,9 @@ a.button {
 .button-google {
     color: #c6cfdc;
     background: #f2f6ff;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .button-google:hover {
@@ -275,6 +302,86 @@ a.button {
     align-items: center;
     font-weight: 500;
     font-size: 40px;
+}
+
+.user_nav {
+    margin: 10px 0 0 0;
+    border: 3px #858585 solid;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+}
+
+.form-search {
+    box-sizing: border-box;
+    position: relative;
+    margin: 1em;
+}
+
+.search {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 3em;
+    line-height: 3em;
+    border-radius: 1.5em;
+    border: 1px solid;
+    padding: 0 1.5em;
+}
+
+.search-btn {
+    box-sizing: border-box;
+    position: absolute;
+    top: .4em;
+    right: .4em;
+    height: 2.2em;
+    border-radius: 1.1em;
+    border: 1px solid;
+    text-transform: uppercase;
+    background: #247fff;
+    border-radius: 25px;
+    color: #fff;
+    text-align: center;
+    width: 70px;
+}
+
+.search-btn {
+    box-sizing: border-box;
+    position: absolute;
+    top: .4em;
+    right: .4em;
+    height: 2.2em;
+    border-radius: 1.1em;
+    border: 1px solid;
+    text-transform: uppercase;
+    background: #247fff;
+    border-radius: 25px;
+    color: #fff;
+    text-align: center;
+    width: 70px;
+}
+
+.search-btn:hover {
+    background-color: #0d6cf2;
+}
+
+
+.editstart {
+    margin-bottom: 8px;
+}
+
+.message {
+    margin-left: 15px;
+
+}
+
+.whatill {
+    margin-left: 15px;
+}
+
+
+.who {
+    margin-left: 15px;
 }
 
 

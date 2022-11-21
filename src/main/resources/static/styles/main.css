@@ -93,10 +93,26 @@ input {
 }
 
 .button-logout {
+
     transform: translate(-50px, 0);
-    padding-right: 25px;
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+    height: 45px;
+    width: 120px;
+    background: #19b3c7;
+    border-radius: 5px;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 45px;
+    cursor: pointer;
 
+}
 
+.button-logout:hover {
+    background-color: #a1d9de;
+    color: darkgrey;
 }
 
 main {
@@ -169,35 +185,6 @@ input:focus {
 
 }
 
-.button-fff {
-    font-weight: bold;
-    font-size: 14px;
-    display: block;
-    height: 45px;
-    width: 100%;
-    background: #247fff;
-    border-radius: 5px;
-    color: #fff;
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 45px;
-    cursor: pointer;
-}
-
-.button-fff:hover {
-    background-color: #0d6cf2;
-}
-
-.
-
-.user_nav {
-    margin: 10px 0 0 0;
-    border: 3px #858585 solid;
-    display: flex;
-    flex-direction: column;
-    border-radius: 25px;
-}
-
 .form-search {
     box-sizing: border-box;
     position: relative;
@@ -251,4 +238,70 @@ input:focus {
     background-color: #0d6cf2;
 }
 
+.bless {
+    margin: 10px 0 0 0;
+    border: 3px #858585 solid;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+}
 
+.message {
+    margin-left: 15px;
+
+}
+
+.whatill {
+    margin-left: 15px;
+}
+
+
+.who {
+    margin-left: 15px;
+}
+
+table {
+    border-left: 25px;
+    border-right: 25px;
+    justify-content: center;
+    width: 1140px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 14px;
+    border-radius: 10px;
+    border-spacing: 0;
+    text-align: center;
+}
+th {
+    background: #BCEBDD;
+    color: white;
+    text-shadow: 0 1px 1px #2D2020;
+    padding: 10px 20px;
+}
+th, td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+}
+th:first-child, td:first-child {
+    text-align: left;
+}
+th:first-child {
+    border-top-left-radius: 10px;
+}
+th:last-child {
+    border-top-right-radius: 10px;
+    border-right: none;
+}
+td {
+    padding: 10px 20px;
+    background: #F8E391;
+}
+tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+tr td:last-child {
+    border-right: none;
+}

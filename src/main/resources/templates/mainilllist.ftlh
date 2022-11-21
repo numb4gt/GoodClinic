@@ -3,7 +3,6 @@
 <head>
     <title>GoodClinic</title>
     <link rel="stylesheet" href="../styles/main.css">
-
 </head>
 
 <body>
@@ -18,7 +17,7 @@
 
             <nav>
                 <div>
-                    <a href="/doctor" class="button-logout">Back</a>
+                    <a href="/main" class="button-logout">Back</a>
                 </div>
 
             </nav>
@@ -34,9 +33,8 @@
 
     <div class="register-form-container">
 
-        <div>Destination:</div>
-
-        <form class="form-search" method="post" action="/doctor/mydestination">
+        <div>Search:</div>
+        <form class="form-search" method="post" action="/main">
             <input class="search" placeholder="Enter the illness, you are looking for" type="text" name="filter">
             <input type="hidden" name="_csrf" value="${_csrf.token}" />
             <button class="search-btn" type="submit">Search</button>
@@ -45,17 +43,17 @@
         <#list illnesses as ill>
 
             <div class="bless">
-                <p class="who"><b>Patient:</b> ${ill.userFor!"none"}</p>
+                <p class="who"><b>Doctor:</b> ${ill.userName!"none"}</p>
                 <p class="whatill"><b>Diagnosis:</b> ${ill.tag}</p>
                 <p class="message"><b>Destination:</b> ${ill.text}</p>
             </div>
 
-        <#else>
+            <#else>
             No illneses.
 
         </#list>
 
-    </div>
+        </div>
 
 
 

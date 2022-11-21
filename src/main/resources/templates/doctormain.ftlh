@@ -2,6 +2,7 @@
 
 <@c.page>
 
+
     <header class="header">
         <div class="container">
             <div class="header_inner">
@@ -21,7 +22,6 @@
         </div>
     </header>
 
-
     <main>
         <div class="circle"></div>
 
@@ -34,10 +34,18 @@
                 <a href="/doctor/mydestination" class="button">Destination</a>
             </div>
 
+            <div>
+                <form action="/logout" method="post">
+                    <input type="hidden" name="_csrf" value="${_csrf.token}" />
+                    <input class="button-google" type="submit" value="Log Out"/>
+                </form>
+            </div>
+
         </div>
 
 
 
     </main>
+
 
 </@c.page>

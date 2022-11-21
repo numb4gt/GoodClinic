@@ -33,6 +33,10 @@ public class Illness {
         return user != null ? user.getUsername() : "none";
     }
 
+    public String getUserFor(){
+        return userfor != null ? userfor.getUsername() : "none";
+    }
+
     public User getUser() {
         return user;
     }

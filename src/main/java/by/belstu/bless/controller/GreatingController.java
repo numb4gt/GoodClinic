@@ -1,12 +1,15 @@
 package by.belstu.bless.controller;
 
 import by.belstu.bless.model.Illness;
+import by.belstu.bless.model.Role;
 import by.belstu.bless.model.User;
 import by.belstu.bless.repository.IllnessRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -19,11 +22,8 @@ public class GreatingController {
     private IllnessRepository illnessRepository;
 
     @GetMapping("/")
-    public String greeting(Map<String, Object> model, @AuthenticationPrincipal User user) {
-        Iterable<Illness> illnesses= illnessRepository.findByUserfor(user);
-
-        model.put("illnesses", illnesses);
-        return "main";
+    public String greeting() {
+        return "redirect:/main";
     }
 
     @GetMapping("/hello")
@@ -38,26 +38,4 @@ public class GreatingController {
         return "hello";
     }
 
-    @GetMapping("/main")
-    public String main(Map<String, Object> model) {
-        Iterable<Illness> illnesses= illnessRepository.findAll();
-
-        model.put("illnesses", illnesses);
-        return "main";
-    }
-
-    @PostMapping("filter")
-    public String filter(@RequestParam String filter, Map<String, Object> model) {
-        Iterable<Illness> messages;
-
-        if (filter != null && !filter.isEmpty()) {
-            messages = illnessRepository.findByTag(filter);
-        } else {
-            messages = illnessRepository.findAll();
-        }
-
-        model.put("illnesses", messages);
-
-        return "main";
-    }
 }

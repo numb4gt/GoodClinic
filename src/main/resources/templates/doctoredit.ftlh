@@ -1,18 +1,48 @@
 <#import "parts/common.ftlh" as c>
 
 <@c.page>
-    UserEditor:
 
-    <form action="/doctor" method="post">
+    <header class="header">
+        <div class="container">
+            <div class="header_inner">
 
-        <h1 type="text" name="username">${user.username}</h1>
-        <input type="text" name="text" placeholder="Put massage" />
-        <input type="text" name="tag" placeholder="Tag">
+                <div class="header_logo">
+                    <img class="beb" src="../images/clinic-removebg-preview.png">
+                </div>
 
-        <input type="hidden" name="_csrf" value="${_csrf.token}" />
-        <input type="hidden" value="${user.id}" name="userID" />
+                <nav>
+                    <a href="/doctor/patientlist" class="button-logout">Back</a>
+                </nav>
 
-        <button type="submit">Add</button>
-    </form>
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="circle"></div>
+
+        <div class="register-form-container">
+
+            <form action="/doctor" method="post">
+
+                <p class="editstart" type="text" name="username">Your make destination for: <b>${user.username}</b></p>
+
+                <input type="text" name="tag" placeholder="Enter the diagnosis">
+                <input type="text" name="text" placeholder="Enter the destination" />
+
+
+                <input type="hidden" name="_csrf" value="${_csrf.token}" />
+                <input type="hidden" value="${user.id}" name="userID" />
+
+                <button class="button" type="submit">Add</button>
+            </form>
+
+
+        </div>
+
+
+
+    </main>
 
 </@c.page>

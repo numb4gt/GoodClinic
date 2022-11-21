@@ -1,67 +1,50 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>User</title>
-    <link rel="stylesheet" href="../styles/main.css">
-</head>
+<#import "parts/common.ftlh" as c>
 
-<body>
+<@c.page>
 
-<header class="header">
-    <div class="container">
-        <div class="header_inner">
+    <header class="header">
+        <div class="container">
+            <div class="header_inner">
 
-            <div class="header_logo">
-                <img class="beb" src="images/clinic-removebg-preview.png">
-            </div>
-
-            <nav>
-                <div>
-                    <form action="/logout" method="post">
-                        <input type="hidden" name="_csrf" value="${_csrf.token}" />
-                        <input class="button-logout" type="submit" value="Sign Out"/>
-                    </form>
+                <div class="header_logo">
+                    <img class="beb" src="images/clinic-removebg-preview.png">
                 </div>
 
-            </nav>
+                <nav>
+                    <a class="nav-link active" href="http://minzdrav.gov.by/ru/">
+                        <img class="beb" src="images/free-icon-medicine-387604.png">
+                    </a>
+                </nav>
 
 
-
-        </div>
-    </div>
-</header>
-
-
-<main>
-
-    <div class="register-form-container">
-
-        <div>Search:</div>
-        <form class="form-search" method="post" action="filter">
-            <input class="search" placeholder="Enter the illness, you are looking for" type="text" name="filter">
-            <input type="hidden" name="_csrf" value="${_csrf.token}" />
-            <button class="search-btn" type="submit">Search</button>
-        </form>
-
-        <#list illnesses as ill>
-
-            <div class="user_nav">
-                <b class="num">${ill.id}</b>
-                <span class="message">${ill.text}</span>
-                <i>${ill.tag}</i>
-                <strong>${ill.userName!"none"}</strong>
             </div>
-
-            <#else>
-            No illneses.
-
-        </#list>
-
         </div>
-
-
+    </header>
 
     <main>
+        <div class="circle"></div>
 
-</body>
-</html>
+        <div class="register-form-container">
+
+            <h1 class="form-title">Hello, ${username}. Now you - Patient!</h1>
+
+            <div>
+                <a href="/main/myill" class="button">My Ilnesses</a>
+                <a href="/main/myvisit" class="button">My Visit</a>
+            </div>
+
+            <div>
+                <form action="/logout" method="post">
+                    <input type="hidden" name="_csrf" value="${_csrf.token}" />
+                    <input class="button-google" type="submit" value="Log Out"/>
+                </form>
+            </div>
+
+        </div>
+
+
+
+    </main>
+
+
+</@c.page>

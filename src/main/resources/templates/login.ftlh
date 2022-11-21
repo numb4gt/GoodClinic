@@ -47,7 +47,7 @@
         <input type="hidden" name="_csrf" value="${_csrf.token}" />
 
         <div>
-            <button class="button" type="submit" value="Sign In"> Login</button>
+            <button class="button" type="submit"> Login</button>
             <a href="/registration" class="button button-google">Registration</a>
         </div>
 

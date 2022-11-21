@@ -60,11 +60,49 @@ public class DoctorController {
     public String userSave(@AuthenticationPrincipal User user, @RequestParam String text,
                            @RequestParam String tag, Map<String, Object> model, @RequestParam("userID") User user2
     ) {
+
+        System.err.println(tag);
+
         Illness message = new Illness(text, tag, user, user2);
 
         illnessRepository.save(message);
 
         return "redirect:/doctor/patientlist";
     }
+
+//    @PostMapping("/patientlist")
+//    public String findDist(@RequestParam String filter, Map<String, Object> model){
+//        Iterable<User> messages;
+//
+//        System.err.println(filter);
+//
+////        if (filter != null && !filter.isEmpty()) {
+////            messages = (Iterable<User>) userRepositiry.findByUsername(filter);
+////        } else {
+////            messages = userRepositiry.findAll();
+////        }
+////
+////        model.put("users", messages);
+//
+//        return "redirect:/doctor/patientlist";
+//    }
+
+    @PostMapping("/mydestination")
+    public String findUser(@RequestParam String filter, Map<String, Object> model, @AuthenticationPrincipal User user){
+        Iterable<Illness> messages;
+
+        System.err.println(filter);
+
+        if (filter != null && !filter.isEmpty()) {
+            messages = illnessRepository.findByTagAndUser(filter, user);
+        } else {
+            messages = illnessRepository.findByUser(user);
+        }
+
+        model.put("illnesses", messages);
+
+        return "redirect:/doctor/mydestination";
+    }
+
 
 }
