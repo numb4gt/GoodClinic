@@ -35,7 +35,7 @@
 
         Search patient:
 
-        <form class="form-search" method="post" action="/doctor">
+        <form class="form-search" method="post" action="/doctor/patientlist">
             <input class="search" placeholder="Enter the patient, you are looking for" type="text" name="filter">
             <input type="hidden" name="_csrf" value="${_csrf.token}" />
             <button class="search-btn" type="submit">Search</button>
@@ -50,11 +50,14 @@
             </thead>
             <tbody>
 
+
             <#list users as user>
                 <tr>
                     <td>${user.username}</td>
                     <td><a href="/doctor/${user.id}">Make destination</a></td>
                 </tr>
+
+
             </#list>
 
             </tbody>

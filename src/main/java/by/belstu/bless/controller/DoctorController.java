@@ -5,6 +5,7 @@ import by.belstu.bless.model.Role;
 import by.belstu.bless.model.User;
 import by.belstu.bless.repository.IllnessRepository;
 import by.belstu.bless.repository.UserRepositiry;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -12,9 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -70,22 +69,26 @@ public class DoctorController {
         return "redirect:/doctor/patientlist";
     }
 
-//    @PostMapping("/patientlist")
-//    public String findDist(@RequestParam String filter, Map<String, Object> model){
-//        Iterable<User> messages;
-//
-//        System.err.println(filter);
-//
-////        if (filter != null && !filter.isEmpty()) {
-////            messages = (Iterable<User>) userRepositiry.findByUsername(filter);
-////        } else {
-////            messages = userRepositiry.findAll();
-////        }
-////
-////        model.put("users", messages);
-//
-//        return "redirect:/doctor/patientlist";
-//    }
+    @PostMapping("/patientlist")
+    public String findDist(@RequestParam String filter, Map<String, Object> model){
+        ArrayList<User> messages = new ArrayList<User>();
+
+
+        System.err.println(filter);
+
+        if (filter != null && !filter.isEmpty()) {
+            messages.add(userRepositiry.findByUsername(filter));
+            System.err.println(messages.get(0));
+            model.put("users", messages);
+        } else {
+
+            model.put("users", userRepositiry.findAll());
+        }
+
+
+
+        return "doctorlist";
+    }
 
     @PostMapping("/mydestination")
     public String findUser(@RequestParam String filter, Map<String, Object> model, @AuthenticationPrincipal User user){
@@ -98,10 +101,9 @@ public class DoctorController {
         } else {
             messages = illnessRepository.findByUser(user);
         }
-
         model.put("illnesses", messages);
 
-        return "redirect:/doctor/mydestination";
+        return "doctordestination";
     }
 
 
